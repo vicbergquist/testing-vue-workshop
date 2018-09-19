@@ -1,12 +1,16 @@
 <template>
   <div>
-    <slot v-if="!open" name="short" />
-    <slot v-if="open" name="long" />
+    <slot 
+      v-if="!open" 
+      name="short" />
+    <slot 
+      v-if="open" 
+      name="long" />
     <button
-    @click="toggleOpen"
-    :aria-expanded="!open"
+      :aria-expanded="!open"
+      @click="toggleOpen"
     >
-      {{open ? 'Show less' : 'Show more'}}
+      {{ open ? 'Show less' : 'Show more' }}
     </button>
   </div>
 </template>

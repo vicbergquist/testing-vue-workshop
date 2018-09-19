@@ -2,8 +2,8 @@
   <div>
     <slot />
     <button 
-    @click="$emit('close-modal')" 
-    aria-label="close"
+      aria-label="close" 
+      @click="$emit('close-modal')"
     >
       Close modal
     </button>

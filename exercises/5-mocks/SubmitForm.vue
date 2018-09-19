@@ -1,21 +1,25 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <input type="text" v-model="username" />
-    <input type="submit" value="Submit" />
+    <input 
+      v-model="username" 
+      type="text" >
+    <input 
+      type="submit" 
+      value="Submit" >
   </form>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      username: null
-    }
-  },
   props: {
     onSubmit: {
       type: Function,
       default: () => {}
+    }
+  },
+  data() {
+    return {
+      username: null
     }
   },
   methods: {

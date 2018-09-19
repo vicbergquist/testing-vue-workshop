@@ -1,6 +1,8 @@
 <template>
   <div>
-    <modal v-if="showModal" @close-modal="showModal = false"/>
+    <modal 
+      v-if="showModal" 
+      @close-modal="showModal = false"/>
   </div>
 </template>
 
@@ -8,13 +10,13 @@
 import Modal from './Modal.vue'
 
 export default {
+  components: {
+    Modal
+  },
   data() {
     return {
       showModal: true
     }
-  },
-  components: {
-    Modal
   }
 }
 </script>

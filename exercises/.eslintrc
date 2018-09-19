@@ -7,6 +7,15 @@
     "prettier/standard"
   ],
   "rules": {
-    "no-new": 0
-  }
+    "no-new": 0,
+    "no-unused-vars": 0
+  },
+  "overrides": [
+    {
+      "files": [ "*.spec*.js" ],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
 }

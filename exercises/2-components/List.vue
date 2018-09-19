@@ -1,10 +1,10 @@
 <template>
   <ul v-if="items">
     <li 
-    v-for="(item, i) in items"
-    :key="`item-${i}`"
+      v-for="(item, i) in items"
+      :key="`item-${i}`"
     >
-      {{item}}
+      {{ item }}
     </li>
   </ul>
   <span v-else>No items</span>

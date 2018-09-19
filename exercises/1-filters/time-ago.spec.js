@@ -1,5 +1,3 @@
-test('creates')
-
 // time value should be unix time in seconds
 function timeAgo(time) {
   const between = Date.now() / 1000 - Number(time)
@@ -13,6 +11,14 @@ function timeAgo(time) {
   } else {
     return pluralize(between / 86400, ' day')
   }
+}
+
+function pluralize(time, label) {
+  const roundedTime = Math.round(time)
+  if (roundedTime === 1) {
+    return roundedTime + label + ' ago'
+  }
+  return roundedTime + label + 's' + ' ago'
 }
 
 describe('timeAgo', () => {
