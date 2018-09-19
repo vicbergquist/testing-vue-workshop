@@ -11,7 +11,7 @@ const devServerPort = process.env.DEV_SERVER_PORT || 8080
 
 const app = express()
 
-function createRenderer(bundle, options) {
+function createRenderer (bundle, options) {
   return createBundleRenderer(
     bundle,
     Object.assign(options, {
@@ -37,7 +37,7 @@ if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') {
     proxy({
       target: `${devServerBaseURL}/${devServerPort}`,
       changeOrigin: true,
-      pathRewrite: function(path) {
+      pathRewrite: function (path) {
         return path.includes('main') ? '/main.js' : path
       },
       prependPath: false

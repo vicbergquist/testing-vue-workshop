@@ -1,23 +1,20 @@
 const app = require('../server')
 const spawn = require('cross-spawn')
 
-const PORT = process.env.PORT || 8080 // #A
+const PORT = process.env.PORT || 8080
 
 const server = app.listen(PORT, () => {
-  // #B
   const opts = ['--config', 'e2e/nightwatch.conf.js', '--env', 'chrome,firefox']
   const runner = spawn('./node_modules/.bin/nightwatch', opts, {
     stdio: 'inherit'
-  }) // #C
+  })
 
-  runner.on('exit', function(code) {
-    // #D
+  runner.on('exit', (code) => {
     server.close()
     process.exit(code)
   })
 
-  runner.on('error', function(err) {
-    // #E
+  runner.on('error', (err) => {
     server.close()
     throw err
   })

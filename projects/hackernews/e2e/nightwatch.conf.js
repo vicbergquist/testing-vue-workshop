@@ -1,12 +1,12 @@
 module.exports = {
-  src_folders: ['e2e/specs'], // #A
-  output_folder: 'e2e/reports', // #B
+  src_folders: ['e2e/specs'],
+  output_folder: 'e2e/reports',
 
   selenium: {
     start_process: true,
-    server_path: require('selenium-server').path, // #C
+    server_path: require('selenium-server').path,
     host: '127.0.0.1',
-    port: 4444, // #D
+    port: 4444,
     cli_args: {
       'WebDriver.chrome.driver': require('chromedriver').path,
       'WebDriver.gecko.driver': require('geckodriver').path
@@ -15,14 +15,13 @@ module.exports = {
 
   test_settings: {
     chrome: {
-      // #F
       desiredCapabilities: {
         browserName: 'chrome'
       }
     },
     firefox: {
       desiredCapabilities: {
-        browserName: 'firefox' // #A
+        browserName: 'firefox'
       }
     }
   }

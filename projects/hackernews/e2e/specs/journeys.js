@@ -1,5 +1,5 @@
 module.exports = {
-  'takes user to the item page': function(browser) {
+  'takes user to the item page': function (browser) {
     browser
       .url('http://localhost:8080') // #A
       .waitForElementVisible('.item', 15000)
@@ -8,7 +8,7 @@ module.exports = {
       .waitForElementVisible('.item-view', 15000) // #E
       .end()
   },
-  'clicking on a user redirects to  the user page': function(browser) {
+  'clicking on a user redirects to  the user page': function (browser) {
     browser
       .url('http://localhost:8080')
       .waitForElementVisible('.item', 15000)
@@ -17,12 +17,12 @@ module.exports = {
       .waitForElementVisible('.user-view', 30000) // #C
       .end()
   },
-  'paginates items correctly': function(browser) {
+  'paginates items correctly': function (browser) {
     let originalItemListText
     browser
       .url('http://localhost:8080')
       .waitForElementVisible('.item', 15000) // #A
-      .getText('.item-list', function(result) {
+      .getText('.item-list', function (result) {
         // #B
         originalItemListText = result.value.slice(0, 100)
       })
@@ -34,7 +34,7 @@ module.exports = {
           .element('.item-list')
           .text.to.not.equal(originalItemListText)
       })
-      .getText('.item-list', function(result) {
+      .getText('.item-list', function (result) {
         // #F
         originalItemListText = result.value.slice(0, 100)
       })
@@ -47,12 +47,12 @@ module.exports = {
           .text.to.not.equal(originalItemListText)
       })
   },
-  'changes list by clicking through nav': function(browser) {
+  'changes list by clicking through nav': function (browser) {
     let originalItemListText
     browser
       .url('http://localhost:8080')
       .waitForElementVisible('.item', 15000) // #A
-      .getText('.item-list', function(result) {
+      .getText('.item-list', function (result) {
         // #B
         originalItemListText = result.value.slice(0, 100)
       })
@@ -63,7 +63,7 @@ module.exports = {
           .element('.item-list')
           .text.to.not.equal(originalItemListText) // #D
       })
-      .getText('.item-list', function(result) {
+      .getText('.item-list', function (result) {
         // #E
         originalItemListText = result.value.slice(0, 100)
       })
